@@ -1,0 +1,19 @@
+<!-- 1 Apply Class Binding to button, when button on click to change text style to italic & text color should be change.
+ -->
+<p [class]='clrChange'>class binding </p>
+<button (click)="changeColor()">change style</button>
+
+<!-- 2 Implement Click Event & send Data to component file
+ -->
+ <br/><br/>
+ <input type="text" #data placeholder="enter your name" />
+ <button (click)="sendData(data.value)">send data</button>
+ <p>Your have entered : {{enteredData}}</p>
+
+ <!-- 3 Write a program for Prime Number, to take dynamic data from end user & find out whether number is  prime or not prime number & display the result on View file.
+ -->
+ <br/><br/>
+ <input type="number" #num placeholder="enter a number" />
+<button (click)="chkPrime(num.value)">check Prime</button>
+<p *ngIf="primeNum">Prime number</p>
+<p *ngIf="!primeNum">Not Prime number</p>
