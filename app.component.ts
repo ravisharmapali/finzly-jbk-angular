@@ -7,31 +7,21 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'CodeSandbox';
-  clrChange = 'colorRed';
-  enteredData: string = '';
-  primeNum: boolean = false;
-  changeColor() {
-    this.clrChange = 'colorGreen';
+  stuObj:any={
+    stdId:0,
+    stdName:"",
+    stdSalary:0 
+  };
+  stuArr:any=[];
+  
+  addItem(data:any){
+    this.stuArr.push(data.value);
+    console.log(data.value);
+    console.error(this.stuArr);
+  }
+  remItem(i:any){
+   this.stuArr.splice(i,1); 
   }
 
-  sendData(data: string) {
-    this.enteredData = data;
-  }
 
-  chkPrime(val: string) {
-    if (this.isPrime(Number(val))) {
-      this.primeNum = true;
-    } else {
-      this.primeNum = false;
-    }
-  }
-  isPrime(val: number): boolean {
-    if (val <= 1) {
-      return false;
-    }
-    for (let i = 2; i < Math.sqrt(val); i++) {
-      if (val % i == 0) return false;
-    }
-    return true;
-  }
 }
